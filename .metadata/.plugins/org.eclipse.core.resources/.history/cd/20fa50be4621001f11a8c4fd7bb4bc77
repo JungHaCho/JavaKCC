@@ -1,0 +1,8 @@
+package kosa.oop2;
+
+public class MySQLDao {
+
+	public void  insert() {
+		System.out.println("Mysql");
+	}
+}

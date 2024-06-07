@@ -1,0 +1,22 @@
+package kosa.oop5;
+
+interface A{
+	void abc();
+}
+
+class B{
+	void bcd() {
+		System.out.println("메서드 호출");
+	}
+}
+
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//1. 익명 클래스를 이용해서 abc() 오버라이딩 -> B를 생성해서 bcd()를 호출
+	}
+
+}

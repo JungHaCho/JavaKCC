@@ -1,0 +1,10 @@
+package kosa.oop3;
+
+public class Student extends{
+
+	@Override
+	public void doing() {
+		// TODO Auto-generated method stub
+		
+	}
+}

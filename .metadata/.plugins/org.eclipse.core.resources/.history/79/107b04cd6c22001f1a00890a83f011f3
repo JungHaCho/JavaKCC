@@ -1,0 +1,23 @@
+package kosa.api;
+
+import java.util.Calendar;
+
+import java.util.Scanner;
+
+public class DateMission {
+
+	public void calDate() {
+
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 키보드로 날짜 입력받아
+		// 2014/06/04 입력받아 몇년 몇개월 재직중
+
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+
+	}
+
+}

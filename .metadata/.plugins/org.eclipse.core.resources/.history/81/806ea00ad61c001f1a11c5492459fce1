@@ -1,0 +1,15 @@
+package test;
+
+public class Manager {
+
+	PhoneInfo[] phoneInfos; // [null, null 10]
+	int cnt = 0;
+
+	public Manager() {
+		phoneInfos = new PhoneInfo[10];
+	}
+
+	public void add(PhoneInfo phoneInfo) {
+		phoneInfo[cnt++] = phoneInfo;
+	}
+}

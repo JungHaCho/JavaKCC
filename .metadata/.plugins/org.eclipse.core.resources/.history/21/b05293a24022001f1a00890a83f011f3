@@ -1,0 +1,56 @@
+package kosa.api;
+
+import java.util.Calendar;
+
+public class CharlendarExam2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// 2024년 달력을 그리세요
+		// < 2024년 6월 >
+		// 일 월 화 수 목 금 토
+		// 1
+		// 2 3 4 5 6 7 8
+
+//		Calendar gc = Calendar.getInstance();
+//		gc.set(2024, 1, 1);
+//		int n = gc.getActualMaximum(Calendar.DATE);
+//		System.out.println(n);
+//
+//		char week[] = { '일', '월', '화', '수', '목', '금', '토' };
+//		String str[][] = new String [5][5]; 
+//		int num = 1;
+//		System.out.println(" 일  월  화  수  목  금  토");
+//		
+//		for (int j = 0; j < week.length; j++) {
+//			
+//			for (int i = 0; i < week.length; i++) {
+//				
+//				char c =week[gc.get(Calendar.DAY_OF_WEEK)-1];
+////				System.out.print(week[i]);
+////				System.out.print(c);
+////				
+//				if( week[i] == c) {
+//					System.out.print(" "+c+num+++" ");
+//					gc.add(Calendar.DATE, 1);
+//					if (num==gc.getActualMaximum(Calendar.DATE)) num=0;
+//					
+//				}else {
+//					System.out.print(" ");
+//				}
+//				
+//			}
+//			
+//			System.out.println(" ss");
+//		}
+		
+		
+		Calendar gc1 = Calendar.getInstance();
+		int n = gc1.getActualMaximum(Calendar.DATE)
+		gc.set(2024, 1, 1);
+		
+
+	}
+
+}

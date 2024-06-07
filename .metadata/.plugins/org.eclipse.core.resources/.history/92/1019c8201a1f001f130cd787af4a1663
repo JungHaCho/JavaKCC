@@ -1,0 +1,49 @@
+package kosa.video.t;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+//		Video v1 = new Video("1","ÆÄ¹¦","ÃÖ¹Î½Ä");
+//		Video v2 = new Video("2","ÆÄ¹¦","ÃÖ¹Î½Ä");
+//		
+		Video video[] = {
+				new GeneralMember("a1","È«±æµ¿","¤·¤·¤·"),
+				
+		};
+		
+		GeneralMember gm[] = {
+				new GeneralMember("a1","È«±æµ¿","¤·¤·¤·"),
+				new SpecialMember("b","È«","rrr",100)
+		};
+
+		for(int i=0;i<gm.length;i++) {
+			
+		}
+		for(int i=0;i<gm.length;i++) {
+			
+			if(gm[i] instanceof SpecialMember) {
+				((SpecialMember)gm[i]).show();
+				
+			}else {
+				gm[i].show();
+			}
+		}
+		
+//
+//		SpecialMember sm = new SpecialMember(");
+//		sm.rental(v2);
+//		sm.show();
+//		
+//		System.out.println("============");
+//		GeneralMember gm = new GeneralMember("a1","È«±æµ¿","¤·¤·¤·");
+//		sm.rental(v2);
+//		sm.show();
+		
+		// GeneralMember¿Í SpecialMemeberÀ» ÇÔ²² ¹è¿­¿¡ ³Ö°í
+		// rental(), show() È£Ãâ Ãâ·Â
+		//cmrgl SpeciaMemberÀº specialPrint()È£Ãâ
+	}
+
+}

@@ -1,0 +1,16 @@
+package kosa.api;
+
+public class RegularExam02 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		String data[] = {
+				"bat", "bba", "bbg", "bonus",
+				"CA", "ca", "c232", "car",
+				"date", "dic", "diraaa"
+		};
+		
+	}
+
+}

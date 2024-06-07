@@ -1,0 +1,18 @@
+package kosa.speak;
+
+import kosa.implement.Role;
+
+public class Reader extends Man implements Role {
+
+	public Reader() {
+		
+	}
+	
+	@Override
+	public void doing() {
+		// TODO Auto-generated method stub
+		System.out.println("이름"+super.getName());
+		System.out.println("자바 화이팅");
+	}
+
+}

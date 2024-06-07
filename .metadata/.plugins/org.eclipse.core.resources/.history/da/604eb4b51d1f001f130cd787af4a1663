@@ -1,0 +1,11 @@
+package kosa_phone;
+
+public class Company extends PhoneInfo{
+
+	private String dept;
+	private String position;
+	
+	public companyShow(){
+		
+	}
+}

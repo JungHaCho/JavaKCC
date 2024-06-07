@@ -1,0 +1,17 @@
+package kosa.menu;
+
+public class Appetizer extends MenuItem{
+
+	public String calories;
+	
+	public Appetizer() {
+		
+	}
+
+	public Appetizer(String name, String price,String calories) {
+		super(name, price, description);
+		this.calories = calories;
+	}
+	
+	
+}

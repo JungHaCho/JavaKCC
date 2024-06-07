@@ -1,0 +1,24 @@
+package kosa.menu;
+
+public class Main {
+
+	public void addMenuList() {
+		
+	}
+	
+	public void orderMenu() {
+		
+	}
+	
+	public void orderDeleteMenu() {
+		
+	}
+
+	public void orderPayMenu() {
+		
+	}
+	
+	public void orderSum() {
+		
+	}
+}

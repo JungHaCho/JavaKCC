@@ -1,0 +1,8 @@
+package kosa.oop5;
+
+public class MyType {
+
+	public MyType() {
+		System.out.println("MyType");
+	}
+}

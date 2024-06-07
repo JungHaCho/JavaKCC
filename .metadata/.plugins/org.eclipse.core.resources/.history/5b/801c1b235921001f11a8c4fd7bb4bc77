@@ -1,0 +1,17 @@
+package kosa.speak;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		Speakable sp = new Speakable();
+		
+		Object obj[] = {new Reader("둘리"), new Work("길동"), new Student("마이콜")};
+		
+		for(int i=0;i<obj.length;i++) {
+			Man m = new Man((Reader)obj[i]);
+		}
+	}
+
+}

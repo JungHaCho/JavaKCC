@@ -1,0 +1,14 @@
+package kosa.oop4;
+
+public class MySQLDao extends Dao {
+
+	public void insert() {
+		System.out.println("MysqlDao insert»£√‚");
+	}
+
+	@Override
+	public void db() {
+		// TODO Auto-generated method stub
+		
+	}
+}

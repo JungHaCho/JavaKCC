@@ -1,0 +1,6 @@
+package kosa.menu;
+
+public class MainCourse {
+
+	public String vegetarian;
+}

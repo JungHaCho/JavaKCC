@@ -1,0 +1,31 @@
+package kosa.oop2;
+
+public class MyService {
+
+	private OracleDao dao;
+	
+	public MyService() {
+		
+	}
+	
+
+	public MyService(OracleDao dao) {
+		super();
+		this.dao = dao;
+	}
+	
+	public void insertService() {
+		dao.insert();
+	}
+
+
+	public OracleDao getDao() {
+		return dao;
+	}
+
+	public void setDao(OracleDao dao) {
+		this.dao = dao;
+	}
+	
+	
+}

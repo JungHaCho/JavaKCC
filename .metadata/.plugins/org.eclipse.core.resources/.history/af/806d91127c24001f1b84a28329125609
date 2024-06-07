@@ -1,0 +1,40 @@
+package kosa.data;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		Scanner sc = new Scanner(System.in);
+		Order order = new Order();
+
+		Food foodadd1 = new Food("아이스크림", 1000);
+		Food foodadd2 = new Food("바나나", 2000);
+
+		Food food = new Food();
+		System.out.println("1. 주문요청  2. 주문처리 3. 매출액 총액 4. 종료");
+		String menu = sc.nextLine();
+		String chooseMenu;
+		switch (menu) {
+
+		case "1":
+			
+			System.out.print("선택할 메뉴를 고르시로");
+			chooseMenu = sc.nextLine();
+			order.foodOrder(chooseMenu);
+			break;
+			
+		case "2":
+			order.foodPulse();
+			
+			break;
+		case "3":
+			break;
+		case "4":
+			break;
+		}
+	}
+
+}

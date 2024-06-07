@@ -1,0 +1,21 @@
+package kosa.speak;
+
+import kosa.implement.Role;
+
+public class Reader extends Man implements Speakable {
+
+	
+	
+	public Reader(String name) {
+		super(name);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void doing() {
+		// TODO Auto-generated method stub
+		System.out.println("이름"+super.getName());
+		System.out.println("자바 화이팅");
+	}
+
+}

@@ -1,0 +1,18 @@
+package kosa_phone;
+
+public class Universe extends PhoneInfo{
+
+	private String major;
+	private String year;
+	
+	public Universe() {
+		
+	}
+	public Universe(String major, String year) {
+		super();
+		this.major = major;
+		this.year = year;
+	}
+	
+	
+}

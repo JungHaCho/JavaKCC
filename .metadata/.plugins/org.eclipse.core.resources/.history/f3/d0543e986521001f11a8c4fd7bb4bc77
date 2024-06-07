@@ -1,0 +1,17 @@
+package kosa.speak;
+
+import kosa.implement.Role;
+
+public class Work extends Man implements Speakable {
+
+	public Work(String name) {
+		super(name);
+	}
+
+	@Override
+	public String speak() {
+		System.out.println("이름" + super.getName());
+		System.out.println("열심히 일해야 한다.");
+	}
+
+}

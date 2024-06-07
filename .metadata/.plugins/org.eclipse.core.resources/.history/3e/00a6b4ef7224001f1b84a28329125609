@@ -1,0 +1,13 @@
+package kosa.data;
+
+import java.util.Stack;
+
+public class StackQueue {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Stack<Integer> stack =  new Stack<Integer>();
+		LinkedList
+	}
+
+}

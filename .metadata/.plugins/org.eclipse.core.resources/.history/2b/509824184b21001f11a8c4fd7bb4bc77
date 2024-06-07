@@ -1,0 +1,21 @@
+package kosa.oop3;
+
+public class Person {
+
+	private String name;
+	private Role role;
+	
+
+	public Person() {
+		role = new Role();
+	}
+	
+	
+	public Person(String name, Role role) {
+		super();
+		this.name = name;
+		
+	}
+	
+	
+}

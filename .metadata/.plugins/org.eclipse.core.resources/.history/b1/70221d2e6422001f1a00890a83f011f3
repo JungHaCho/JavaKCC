@@ -1,0 +1,42 @@
+package kosa.api;
+
+
+import java.util.Calendar;
+
+import java.util.Scanner;
+
+public class DateMission {
+
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		// 키보드로 날짜 입력받아 
+		// 2014/06/04 입력받아 몇년 몇개월 재직중
+		
+		Scanner sc = new Scanner(System.in);
+		String str = sc.nextLine();
+		
+		// 년월일 로 자르기
+		String arr[] = str.split("/");
+		
+		// 2014/06/04 날짜 입력 받기
+		Calendar gc1 = Calendar.getInstance();
+	
+		int year = Integer.parseInt(arr[1]);
+		int month = Integer.parseInt(arr[2]);
+		int day = Integer.parseInt(arr[3]);
+	
+		
+		// 현재 날짜 받기
+		gc1.getTime();
+		int nowYear = gc1.get(Calendar.YEAR);
+		int nowMonth = gc1.get(Calendar.MONTH);
+		int nowDate= gc1.get(Calendar.DATE);
+		
+		
+		//
+		
+		long timeWork = ; 
+	}
+
+}

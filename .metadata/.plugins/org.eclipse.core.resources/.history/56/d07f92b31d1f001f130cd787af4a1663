@@ -1,0 +1,8 @@
+package kosa_phone;
+
+public class Company extends PhoneInfo{
+
+	public companyShow{
+		
+	}
+}

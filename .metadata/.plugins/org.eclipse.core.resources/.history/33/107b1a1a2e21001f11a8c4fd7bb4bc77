@@ -1,0 +1,26 @@
+package kosa.menu;
+
+public class MainCourse extends MenuItem{
+
+	public String vegetarian;
+	
+	public MainCourse() {
+		
+	}
+
+	public MainCourse(String vegetarian) {
+		super(name, String price, String description
+		this.vegetarian = vegetarian;
+	}
+
+	public String getVegetarian() {
+		return vegetarian;
+	}
+
+	public void setVegetarian(String vegetarian) {
+		this.vegetarian = vegetarian;
+	}
+	
+	
+	
+}

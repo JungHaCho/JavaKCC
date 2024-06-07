@@ -1,0 +1,9 @@
+package kosa.oop3;
+
+public class Person {
+
+	private String name;
+	private Role role;
+	
+	
+}

@@ -1,0 +1,14 @@
+package kosa.menu;
+
+public class Main {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		// Scanner sc= new Scanner(System.in);
+		
+		//MenuItem 객체의 목록을 저장하고, 주문 추가, 삭제, 결제 기능, 총매출 합계등을 제공합니다. 
+	
+	
+	}
+}

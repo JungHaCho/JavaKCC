@@ -1,0 +1,18 @@
+package kosa.oop5;
+
+interface A{
+	B abc(); // B타입 리턴하려면 ㅠrkd ltDj
+}
+
+class B{
+	B(){
+		
+	}
+}
+public class Main3 {
+	
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+	}
+}

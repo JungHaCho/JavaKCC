@@ -1,0 +1,8 @@
+package kosa.menu;
+
+public class MenuItem {
+	
+	private String name;
+	private String price;
+	private String description;
+}

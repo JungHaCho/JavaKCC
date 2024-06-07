@@ -1,0 +1,6 @@
+package kosa.oop2;
+
+abstract class Dao {
+
+	abstract void insert();
+}

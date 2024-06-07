@@ -1,0 +1,6 @@
+package kosa.oop4;
+
+public class Service {
+
+	Dao dao =new Dao();
+}

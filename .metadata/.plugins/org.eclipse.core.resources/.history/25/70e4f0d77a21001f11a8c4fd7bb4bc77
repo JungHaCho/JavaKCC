@@ -1,0 +1,21 @@
+package kosa.oop5;
+
+interface A{
+	void abc();
+}
+
+class B{
+	void bcd() {
+		System.out.println("메서드 호출");
+	}
+}
+
+
+public class Main2 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
