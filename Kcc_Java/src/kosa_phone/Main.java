@@ -40,7 +40,13 @@ public class Main {
 			case "5":
 				m.deletePhoneInfo();
 				break;
+			
 			case "6":
+				System.out.println("정렬");
+				m.sort();
+				break;
+				
+			case "7":
 				System.out.println("프로그램종료");
 				return;
 			

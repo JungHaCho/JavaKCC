@@ -1,5 +1,7 @@
 package kosa_phone;
 
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
@@ -99,7 +101,7 @@ public class Manager {
 					((Company) p).Companyshow();
 				}
 			}
-	
+
 //			it = list.iterator();
 //			while (it.hasNext()) {
 //				if ((it.next()) instanceof Company) {
@@ -192,9 +194,49 @@ public class Manager {
 
 	}
 
-	public void addSub() {
-		System.out.print("이름:");
-		String name = sc.nextLine();
+	public void sort() {
+//		Collections.sort(list);
+//		for (PhoneInfo phoneInfo : list) {
+//			System.out.println(phoneInfo.getName());
+//		}
+		System.out.println("1.날짜 내림차순 2.이름 오름차순");
+		String menu1 = sc.nextLine();
+		switch (menu1) {
+		case "1":
+			System.out.println("------날짜 내림차순 --------");
+			Collections.sort(list, new Comparator<PhoneInfo>() {
+
+				// 나이순 내림차순
+				@Override
+				public int compare(PhoneInfo o1, PhoneInfo o2) {
+
+					if (o1.getBrith().compareTo(o2.getBrith()) > 0) {
+						return -1;
+					} else if ((o1.getBrith().compareTo(o2.getBrith()) < 0)) {
+						return 1;
+					}
+					return 0;
+				}
+
+			});
+			break;
+		case "2":
+			System.out.println("------이름 오름차순 --------");
+			Collections.sort(list, new Comparator<PhoneInfo>() {
+				@Override
+				public int compare(PhoneInfo o1, PhoneInfo o2) {
+					if (o1.getName().compareTo(o2.getName()) > 0) {
+						return 1;
+					} else if (o1.getName().compareTo(o2.getName()) < 0) {
+						return -1;
+					}
+					return 0;
+				}
+			});
+			break;
+		}
+
+	
 
 	}
 
