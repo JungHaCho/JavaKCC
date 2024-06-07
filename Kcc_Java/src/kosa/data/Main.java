@@ -17,7 +17,7 @@ public class Main {
 		while (true) {
 			switch (menu) {
 
-			case "1":
+			case "1": //
 
 				System.out.print("음식 입력");
 				menuName = sc.nextLine();
