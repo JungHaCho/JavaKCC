@@ -9,7 +9,7 @@ public class Order {
 	private static int orderUID = 1;
 
 	private int orderId;
-	
+
 	private DeliveryStatus deliveryStatus;
 	private List<Product> productList;
 	private int totalPrice;
@@ -19,23 +19,25 @@ public class Order {
 
 	public Order() {
 
-		
 	}
 
-	public Order(List<Product> productList, User fromUser) {
+	public Order(User fromUser) {
 		super();
-		this.orderUID = orderUID++;
-		
+		this.orderId = orderUID++;
+
 		this.createdAt = LocalDateTime.now();
-		
+
 		this.productList = productList;
 		this.fromUser = fromUser;
-		
+
 		this.deliveryStatus = DeliveryStatus.WAITING;
+	
 	}
 
-
-
+	public void printOrderInfo() {
+		System.out.println("결제인"+fromUser+"결제 날짜"+createdAt+"배송안내"+deliveryStatus);
+	}
+	
 	public int getOrderId() {
 		return orderId;
 	}
@@ -84,5 +86,4 @@ public class Order {
 		this.createdAt = createdAt;
 	}
 
-	
 }

@@ -8,9 +8,12 @@ public class Product {
 	private String name;
 	private int price;
 	private int stock;
-	private String category;
+	private Category category;
 
-	public Product( String name, int price, int stock, String category) {
+	public Product() {
+		
+	}
+	public Product( String name, int price, int stock, Category category) {
 		super();
 		this.productId = productUID++;
 		this.name = name;
@@ -19,10 +22,14 @@ public class Product {
 		this.category = category;
 	}
 
-	@Override
-	public String toString() {
+	
+	public String listProduct() {
 		return "Product [productId=" + productId + ", name=" + name + ", price=" + price + ", stock=" + stock
 				+ ", category=" + category + "]";
+	}
+	
+	public String infoProduct() {
+		return   "["+"물건이름=" + name + ", 가격=" + price + ", category=" + category  +"]";
 	}
 	
 
@@ -58,11 +65,11 @@ public class Product {
 		this.stock = stock;
 	}
 
-	public String getCategory() {
+	public Category getCategory() {
 		return category;
 	}
 
-	public void setCategory(String category) {
+	public void setCategory(Category category) {
 		this.category = category;
 	}
 	
