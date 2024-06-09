@@ -1,55 +1,61 @@
 package kosa.data;
 
-import java.util.Iterator;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
 
 public class ListMission {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	public static void main(String[] args) throws IOException {
 
+		// List ìë£Œêµ¬ì¡°ë¥¼ í™œìš©í•˜ì—¬ í‚¤ë³´ë¡œë¶€í„° ë¬¸ìì—´ì„ ì…ë ¥ë°›ì•„ ì²˜ë¦¬í•˜ì.
+		// 1. ë°ì´í„° ì¶”ê°€ 2. ë°ì´í„° ì‚­ì œ 3. ë°ì´í„° ì¶œë ¥(for, Iterator) 4. ì¢…ë£Œ
 		Scanner sc = new Scanner(System.in);
-		List<String> list =new LinkedList<String>();
-		int idx =-1;
-		
-		while(true) {
-			System.out.println("1.µ¥ÀÌÅÍÃß°¡ 2.µ¥ÀÌÅÍ »èÁ¦ 3. µ¥ÀÌÅÍ Ãâ·Â 4. Á¾·á");
-			System.out.print("ÀÔ·Â >>");
-			String menu = sc.nextLine();
-			switch(menu) {
-			case "1":
-				System.out.print("µ¥ÀÌÅÍ ÀÔ·ÂÇÏ½Ã¿À");
-				list.add(sc.nextLine());	
-				break;				
-			case "2":
-				System.out.print("»èÁ¦ÇÒ µ¥ÀÌÅÍ ÀÔ·ÂÇÏ½Ã¿À");
-				String str1= sc.nextLine();
-				idx= list.indexOf(str1);
-				
-				if(idx != -1) {
-					list.remove(str1);		
-				}else {
-					System.out.println("Á¸ÀçÇÏÁö¾Ê½À´Ï´Ù.");
+		List<String> list = new LinkedList();
+		int cmd;
+
+		while (true) {
+			System.out.println("1. ë°ì´í„° ì¶”ê°€ | 2. ë°ì´í„° ì‚­ì œ | 3. ë°ì´í„° ì¶œë ¥ | 4. ì¢…ë£Œ");
+			System.out.print(">");
+			cmd = Integer.parseInt(sc.next());
+
+			switch (cmd) {
+			case 1:
+				System.out.print("ë¬¸ìì—´ ì…ë ¥>");
+				list.add(sc.next());
+				break;
+			case 2:
+				System.out.print("ì‚­ì œí•  ë¬¸ìì—´ ì…ë ¥>");
+				int idx = list.indexOf(sc.next());
+				if (idx != -1) {
+					list.remove(idx);
+				} else {
+					System.out.println("ì¡´ì¬í•˜ì§€ ì•ŠìŠµë‹ˆë‹¤.");
 				}
 				break;
-			case "3":
-//				for(int i=0;i<list.size();i++) {
-//					System.out.print(list.get(i));	
-//				}
-//				System.out.println();
-				Iterator<String> iterator = list.iterator();
-				while(iterator.hasNext()) {
-					String str = iterator.next();
-					System.out.println(str);
-				}
+			case 3:
+				// getAllListByFor(list);
+				getAllListByIterator(list);
 				break;
-			case "4":
-				System.out.println("Á¾·á");
-				return;	
+			case 4:
+				System.out.println("ì„œë¹„ìŠ¤ ì¢…ë£Œ");
+				sc.close();
+				return;
 			}
 		}
+	}
+
+	private static void getAllListByFor(List<String> list) {
+		for (String el : list) {
+			System.out.print(el + " ");
+		}
+		System.out.println();
+	}
+
+	private static void getAllListByIterator(List<String> list) {
+		list.iterator().forEachRemaining((el) -> System.out.print(el + " "));
+		System.out.println();
 	}
 
 }

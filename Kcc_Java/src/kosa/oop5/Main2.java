@@ -1,50 +1,46 @@
 package kosa.oop5;
 
-interface A{
+interface A {
+
 	void abc();
+
 }
 
-class B{
+class B {
+
 	void bcd() {
-		System.out.println("¸Ş¼­µå È£Ãâ");
+		System.out.println("ë©”ì„œë“œ í˜¸ì¶œ");
 	}
-}
 
+}
 
 public class Main2 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		//1. ÀÍ¸í Å¬·¡½º¸¦ ÀÌ¿ëÇØ¼­ abc() ¿À¹ö¶óÀÌµù -> B¸¦ »ı¼ºÇØ¼­ bcd()¸¦ È£Ãâ
-		
+		// 1. ìµëª… í´ë˜ìŠ¤ë¥¼ ì´ìš©í•´ì„œ abc() ì˜¤ë²„ë¼ì´ë”© -> Bë¥¼ ìƒì„±í•´ì„œ bcd() í˜¸ì¶œí•˜ê¸°
 		A a = new A() {
-			
+
 			@Override
 			public void abc() {
-				// TODO Auto-generated method stub
 				B b = new B();
 				b.bcd();
 			}
 		};
-		
-		//a.abc();
-		
-		//2. ÇØ´ç³»¿ë µ¿ÀÏÇÏ°Ô ¶÷´Ù½ÄÀ¸·Î ±¸Çö
+		a.abc();
 
-	
-		A a1 = () -> {
+		// 2. ëŒë‹¤ì‹
+		A aa = () -> {
 			B b = new B();
 			b.bcd();
 		};
-	
-		//3. ÀÎ½ºÅÏ½º ÂüÁ¶ ±¸Çö
-		B b =  new B();
-		A a3 = b::bcd; 
-		
+		aa.abc();
+
+		// 3. ì¸ìŠ¤í„´ìŠ¤ ì°¸ì¡° êµ¬í˜„
+		B b = new B();
+		A a3 = b::bcd;
 		a3.abc();
-		
-		
-	
+
 	}
+
 }

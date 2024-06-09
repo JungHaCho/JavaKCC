@@ -1,40 +1,42 @@
 package kosa.oop5;
 
-interface AA{
-	BB abc(); // B≈∏¿‘ ∏Æ≈œ«œ∑¡∏È B∞° ¿÷æÓæﬂ«‘
+interface AA {
+
+	BB abc(int a);
+
 }
 
-class BB{
-	BB(){
-		System.out.println(" B ª˝º∫¿⁄");
+class BB {
+
+	BB(int a) {
+		System.out.println(a + "B ÏÉùÏÑ±Ïûê");
 	}
-	
+
 }
 
 public class Main3 {
-	
-	
+
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-	
-		AA a1 = new AA() {
-			
-			@Override
-			public BB abc() {
-				// TODO Auto-generated method stub
-				return new BB();
-			}
-		}; 
-			
-		a1.abc();
-		
-		AA a2 = () ->  new BB();
-		a2.abc();
-		
-		//¿ŒΩ∫≈œΩ∫ ¬¸¡∂
-		
-		AA a3 = BB::new; // BB∞¥√º∏¶ ∏Æ≈œ«—¥Ÿ.
-		a3.abc();
-		
+
+		// 1. ÏùµÎ™Ö ÎÇ¥Î∂Ä ÌÅ¥ÎûòÏä§
+		// AA a1 = new AA() {
+
+		// @Override
+		// public BB abc() {
+		// BB b = new BB();
+		// return b;
+		// }
+		// };
+		// a1.abc();
+
+		// 2. ÎûåÎã§Ïãù
+		// AA a2 = () -> new BB();
+		// a2.abc();
+
+		// 3. Ïù∏Ïä§ÌÑ¥Ïä§ Ï∞∏Ï°∞
+		AA a3 = BB::new;
+		a3.abc(132);
+
 	}
+
 }

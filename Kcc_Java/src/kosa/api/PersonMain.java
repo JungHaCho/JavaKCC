@@ -3,31 +3,18 @@ package kosa.api;
 public class PersonMain {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		Person p1 = new Person("È«±æµ¿",20);
-		Person p2 = new Person("È«±æµ¿",20);
-		
-		// new »õ·Î¿î ¸Ş¸ğ¸® °ø°£À» ¹Ş±â ¶§¹®¿¡  ´Ù¸£´Ù.
-//		if(p1 == p2) {
-//			System.out.println("°°´Ù");
-//		}else {
-//			System.out.println("´Ù¸£´Ù");
-//		}
-		
-		// Object equals -> ÁÖ¼Ò°ªÀ»ºñ±³ÇÑ´Ù.
-		if(p1.equals(p2)) {
-			System.out.println("°°´Ù");
-		}else {
-			System.out.println("´Ù¸£´Ù");
+		Person p1 = new Person("í™ê¸¸ë™", 30);
+		Person p2 = new Person("í™ê¸¸ë™", 20);
+
+		if (p1.equals(p2)) {
+			System.out.println("ê°™ë‹¤");
+		} else {
+			System.out.println("ë‹¤ë¥´ë‹¤");
 		}
-		
-		String str = "abc";
-		
-		// ObjectÅ¬·¡½ºÀÇ toStringÀÌ ÀÖ´Âµ¥ ÁÖ¼Ò°ªÀ» Âï¾îÁÖ´Â ¿ªÇÒÀ» ÇÏ´Â °Í °°¾Æ¿ä 
+
 		System.out.println(p1);
-		System.out.println(p1.toString());
-		
+
 	}
 
 }

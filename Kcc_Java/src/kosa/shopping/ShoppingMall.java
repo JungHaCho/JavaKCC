@@ -155,7 +155,7 @@ public class ShoppingMall {
 				// user의 저장된 상품객체들 전체 출력
 				for (Product userCart : usercheck.getCart()) {
 					System.out.println(userCart.infoProduct());
-					
+
 				}
 				break;
 			} else {
@@ -172,8 +172,8 @@ public class ShoppingMall {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("결제할 고객 이름을 입력하시오 >>> ");
 		String CustomerName = sc.nextLine();
-		int totalPrice =0;
-		
+		int totalPrice = 0;
+
 		for (User usercheck : userList) {
 			if (usercheck.getName().equals(CustomerName)) {
 				// 주문 목록
@@ -181,15 +181,15 @@ public class ShoppingMall {
 					System.out.println("주문하실 목록은 >>" + userCart.infoProduct() + "입니다.");
 					totalPrice += userCart.getPrice();
 				}
-				
+
 				// 주문 결제 내역 추가
-				orderList.add(new Order(usercheck.getCart(), usercheck));
-				
-				//Order클래스의 totalPrice 값을 어떻게 set하나????????????????????
+//				orderList.add(new Order(usercheck.getCart(), usercheck));
+
+				// Order클래스의 totalPrice 값을 어떻게 set하나????????????????????
 				for (Order userOrder : orderList) {
 					userOrder.setTotalPrice(totalPrice);
 				}
-				
+
 				System.out.println("결제 됐습니다.");
 				usercheck.setCart(null);
 			}
@@ -211,7 +211,7 @@ public class ShoppingMall {
 				// Order클래스의 fromUser 같을때 
 				// orderList안에서의 order의 (인덱스??) 객체주소값을 어떻게 알 수 있나
 				for (Order order : orderList) {
-					order.getFromUser().get;
+					order.getFromUser();
 				}
 			}
 		}

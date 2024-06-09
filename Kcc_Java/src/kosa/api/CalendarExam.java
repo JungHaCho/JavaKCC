@@ -2,77 +2,41 @@ package kosa.api;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.GregorianCalendar;
 
 public class CalendarExam {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		// GregorianCalendar gc = new GregorianCalendar();
-		//System.out.println(gc);
-		
 		Calendar gc = Calendar.getInstance();
-		String now = gc.get(Calendar.YEAR)+ "≥‚"
-							+(gc.get(Calendar.MONTH)+1)+"ø˘"
-							+ gc.get(Calendar.DATE)+"¿œ"
-							+gc.get(Calendar.HOUR)+"Ω√"
-							+gc.get(Calendar.MINUTE)+"∫–";
-		
-		System.out.println(" «ˆ¿Á Ω√∞£ : "+now);
-//		
-//		gc.add(Calendar.DATE, 100);
-//		
-//
-//		String future = gc.get(Calendar.YEAR)+ "≥‚"
-//							+(gc.get(Calendar.MONTH)+1)+"ø˘"
-//							+ gc.get(Calendar.DATE)+"¿œ"
-//							+gc.get(Calendar.HOUR)+"Ω√"
-//							+gc.get(Calendar.MINUTE)+"∫–";
-//		
-//		System.out.println(" 100¿œ »ƒ : "+future);
-//		
-//		gc.set(2022,5,4);
-//		gc.add(Calendar.DATE, 1000);
-//		
-//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
-//		String str = sdf.format(gc.getTime());
-//		System.out.println(str);
-		
-		
-		// 2024≥‚∫Œ≈Õ 2030≥‚±Ó¡ˆ ¿⁄Ω≈¿« ª˝¿œ π´Ωºø‰¿œ ?
-		// Calendar.DAY_OF_WEEK => ø‰¿œ <¿œ1 ø˘2 »≠3~ ºˆ4 ∏Ò5 ¿œ> <
-		
-		
-//		
-//		for(int i=2024; i<=2030;i++) {
-//			gc.set(i,9,9);
-//			SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd");
-//			String str1 = sdf1.format(gc.getTime());
-//			System.out.println(str1);
-//			System.out.println("ø‰¿œ"+gc.get(Calendar.DAY_OF_WEEK));
-//			
-//			gc.add(Calendar.YEAR, 1);
-//		}
-		
-//		gc.set(2024,1,1);
-//		
-//		gc.add(Calendar.DATE, 251);
-//		
-//		System.out.println("ø‰¿œ"+gc.get(Calendar.DAY_OF_WEEK));
-		
-//		SimpleDateFormat sdf1 = new SimpleDateFormat("yyyy/MM/dd");
-//		String str1 = sdf1.format(gc.getTime());
-//		
-		char week[] = {'¿œ','ø˘','»≠','ºˆ','∏Ò','±›','≈‰'};
-		for(int i=2024;i<=2030;i++) {
-			gc.set(i,5,4);
-			char c = week[gc.get(Calendar.DAY_OF_WEEK)-1];
-			System.out.println(i+"≥‚¿« ª˝¿Œ¿∫ "+ c + "ø‰¿œ¿‘¥œ¥Ÿ.");
+		// System.out.println(gc);
+
+		String now = gc.get(Calendar.YEAR) + "ÎÖÑ " + (gc.get(Calendar.MONTH) + 1) + "Ïõî " + gc.get(Calendar.DATE) + "Ïùº "
+				+ gc.get(Calendar.HOUR) + "Ïãú " + gc.get(Calendar.MINUTE) + "Î∂Ñ ";
+
+		System.out.println("ÌòÑÏû¨ÏãúÍ∞Ñ: " + now);
+
+		gc.add(Calendar.DATE, 100);
+
+		String future = gc.get(Calendar.YEAR) + "ÎÖÑ " + (gc.get(Calendar.MONTH) + 1) + "Ïõî " + gc.get(Calendar.DATE)
+				+ "Ïùº " + gc.get(Calendar.HOUR) + "Ïãú " + gc.get(Calendar.MINUTE) + "Î∂Ñ ";
+
+		System.out.println("100Ïùº ÌõÑ: " + future);
+
+		gc.set(2022, 5, 4);
+		gc.add(Calendar.DATE, 1000);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd");
+		System.out.println(sdf.format(gc.getTime()));
+
+		// ÌÄ¥Ï¶à: 2024ÎÖÑ ~ 2030ÎÖÑÍπåÏßÄ ÏûêÏã†Ïùò ÏÉùÏùºÏù¥ Î¨¥Ïä® ÏöîÏùº?
+		gc = gc.getInstance();
+
+		char[] week = { 'Ïùº', 'Ïõî', 'Ìôî', 'Ïàò', 'Î™©', 'Í∏à', 'ÌÜ†' };
+		for (int i = 2024; i <= 2030; i++) {
+			gc.set(i, 8, 3);
+			System.out.println(i + "ÎÖÑ: " + week[gc.get(Calendar.DAY_OF_WEEK) - 1] + "ÏöîÏùº");
 		}
-		
-		
-		gc.set(2024,1,1);
-		
+
 	}
 
 }

@@ -1,9 +1,13 @@
 package kosa.oop2;
 
-public class OracleDao extends Dao{
+public class OracleDao extends Dao {
 
-	public void insert() {
-		System.out.println("OracleDao insert È£Ãâ");
+	public OracleDao() {
 	}
 	
+	@Override
+	public void insert() {
+		System.out.println("OracleDao insert í˜¸ì¶œ");
+	}
+
 }

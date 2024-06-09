@@ -5,106 +5,92 @@ import java.util.Arrays;
 public class StringExam {
 
 	public static void main(String[] args) {
-		
-		// 1. String °´Ã¼ »ı¼º ¹æ¹ı°ú Â÷ÀÌÁ¡
-		String str1 = "ABC";
-		String str2 = "ABC";// ±âÁ¸ÀÇ ¹®ÀÚ¿­ ABCÀÇ ÁÖ¼Ò°ªÀ» ÂüÁ¶ÇÑ´Ù
-		String str3 = new String("ABC"); // ¹«Á¶°Ç newÇÏ¸é »õ·Î¿î ¸Ş¸ğ¸®¸¦ ¸¸µç´Ù.
-		
-		if(str1 == str2) {
-			System.out.println("±æ´Ù");
-		}else {
-			System.out.println("´Ù¸£´Ù");
+
+		// 1. String ê°ì²´ ìƒì„± ë°©ë²•ê³¼ ì°¨ì´ì 
+		String str = "ABC";
+		String str2 = "ABC";
+		String str3 = new String("ABC");
+
+		if (str == str2) {
+			System.out.println("ê°™ë‹¤");
+		} else {
+			System.out.println("ë‹¤ë¥´ë‹¤");
 		}
-		
-		//2. String Å¬·¡½º ºÒº¯¼ºÀÇ Æ¯Â¡
-		// string Å¬·¡½º ¾ÈÀÇ ¾î¶² ¸Ş¼­µå¶óµµ ÀÚ±âÀÚ½ÅÀ» º¯°æÇÒ ¼ö ¾ø´Ù.
-		// string Å¬·¡½º¾ÈÀÇ ¸Ş¼­µå´Â returnÀ»À§ÇØ Á¸ÀçÇÑ´Ù.
-		// StringBuffer,StringBuilder (°¡º¯¼º) °¡´É 
-		str1.concat("DEF");
-		String str4 = str1.concat(str1);
-		System.out.println("str1"+str1);
-		System.out.println(str4);
-		
+
+		// 2. String í´ë˜ìŠ¤ ë¶ˆë²ˆì„± íŠ¹ì§•
+		str = str.concat("DEF");
+		System.out.println(str);
+
 		StringBuffer sb = new StringBuffer("ABC");
 		sb.append("DEF");
 		System.out.println(sb);
-		
-		// ¿¬»êÀÚ (+) º¯°æ°¡´É
-		String sql = "select * from board ";
+
+		// ì—°ì‚°ì(+) ë³€ê²½ ê°€ëŠ¥
+		String sql = "SELECT * FROM board ";
 		int num = 10;
-		
-		if(num == 10) {
-			sql += "where num = 10";
+
+		if (num == 10) {
+			sql += "WHERE num = 10 ";
 		}
+
 		System.out.println(sql);
-		
-		// ÇØ´ç ¹®ÀÚ¿­ÀÇ À§Ä¡¸¦ ÆÄ¾Ç => indexOf("¹®ÀÚ¿­")
-		// => ¹®ÀÚ¿­ÀÇ ÀÎµ¦½º. ¾øÀ¸¸é -1
+
+		// í•´ë‹¹ ë¬¸ìì—´ì˜ ìœ„ì¹˜ë¥¼ íŒŒì•… => indexOf("ë¬¸ìì—´") => í•´ë‹¹ ë¬¸ìì—´ì˜ ì¸ë±ìŠ¤, ì—†ìœ¼ë©´ -1
 		System.out.println(sql.indexOf("board"));
-		
-		// ¹®ÀÚ¿­ ±æÀÌ 
+
 		System.out.println(sql.length());
-		
-		for(int i=0; i<sql.length();i++) {
+
+		for (int i = 0; i < sql.length(); i++) {
 			System.out.print(sql.charAt(i));
 		}
-		System.out.println("");
-		// ¹®ÀÚ¿­ ºÎºĞ ÃßÃâ
-		//subString(5,10) 6¹øÂ°ºÎÅÍ 10¹øÂ°
-		
-		//board¸¸ Ãâ·Â
-		System.out.println(sql.substring(sql.indexOf("board"),sql.indexOf("board")+5));
-		
-		// substring, indexOf
+		System.out.println();
+
+		// ë¬¸ìì—´ ë¶€ë¶„ ì¶”ì¶œ: subString(5), subString(5, 10)
+		// í€´ì¦ˆ: sql ë³€ìˆ˜ "board" ë¬¸ìì—´ë§Œ ì¶œë ¥
+		String target = "board";
+		int pos = sql.indexOf(target);
+		System.out.println(sql.substring(pos, pos + target.length()));
+
+		// í€´ì¦ˆ
 		String fileName = "kosa.jpg";
-		String head = fileName.substring(0,fileName.indexOf("."));
-		String pattern = fileName.substring(fileName.indexOf(".")+1,fileName.length());
-		
-		System.out.println(head + " " + pattern);
-		
+		String[] strArr = fileName.split("\\.");
+		System.out.println("head: " + strArr[0] + "| pattern: " + strArr[1]);
+
 		String id = "kosa";
-		String m_id = "Kosa ";
-		
-		// trim() ¾ÕµÚÀÇ °ø¹é¹®ÀÚ¸¦ ¾ø¾ÖÁÜ
-		if(id.equalsIgnoreCase(m_id.trim())) {
-			System.out.println("°°´Ù");
-		}else {
-			System.out.println("Æ²¸®´Ù");
+		String m_id = "Kosa";
+
+		// ëŒ€ì†Œë¬¸ì êµ¬ë¶„X
+		if (id.equalsIgnoreCase(m_id.trim())) {
+			System.out.println("ê°™ë‹¤");
+		} else {
+			System.out.println("ë‹¤ë¥´ë‹¤");
 		}
-		
-		//¹®ÀÚ¿­ ==> String[]º¯È¯
-		//split()
-		//Arrays.toString(arr)
-		String fruits = "»ç°ú,Æ÷µµ,¼ö¹Ú,¹è";
-		String arr[] = fruits.split(",");
+
+		// ë¬¸ìì—´ -> String[] ë³€í™˜
+		String fruits = "ì‚¬ê³¼,í¬ë„,ìˆ˜ë°•,ë°°";
+		String[] arr = fruits.split(",");
 		System.out.println(Arrays.toString(arr));
-		
-		//¹®ÀÚ¿­ ==> char[] º¯È¯
-		//toCharArray()
-		String str5 ="abcdef";
-		char arr2[] = str5.toCharArray();
+
+		// ë¬¸ìì—´ -> char[] ë³€í™˜
+		String str5 = "abcdef";
+		char[] arr2 = str5.toCharArray();
 		System.out.println(Arrays.toString(arr2));
-		
-		//¹®ÀÚ¿­ ==> byte[] º¯È¯
-		//getBytes()
+
+		// ë¬¸ìì—´ -> byte[] ë³€í™˜
 		String str6 = "abcdef";
-		byte arr3[] = str6.getBytes();
-		System.out.println(Arrays.toString(arr3));
-		
-		// ¹®ÀÚ¿­ <==> Á¤¼öÇü
-		// Integer.parseInt(str7)
-		String str7 = "10";
+		byte[] arr3 = str6.getBytes();
+		System.out.println(Arrays.toString(arr3)); // [97, 98, 99, 100, 101, 102]
+
+		// ë¬¸ìì—´ -> ì •ìˆ˜í˜•
+		String str7 = "100";
 		int num2 = Integer.parseInt(str7);
 		System.out.println(num2);
 
 		int num3 = 10;
-		// StringÀÌ ´õÅ« µ¥ÀÌÅÍ Å¸ÀÔÀ¸·Î  ·Î º¯È¯µÈ´Ù.
-		String str8 = String.valueOf(num3);
-		String str9 = 10 + "";
+		// String str8 = String.valueOf(num3);
+		String str8 = 10 + "";
 		System.out.println(str8);
-		
-		
-	
+
 	}
+
 }

@@ -1,12 +1,10 @@
 package kosa.oop3;
 
-public class Work extends Role {
+public class Work implements Role {
 
 	@Override
 	public void doing() {
-		// TODO Auto-generated method stub
-		System.out.println("�� working ");
+		System.out.println("직장역할 출력");
 	}
 
-	
 }

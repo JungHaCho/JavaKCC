@@ -8,31 +8,23 @@ import java.util.Date;
 public class DateExam {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-//
-//		Date now = new Date();
-//		String str = now.toString();
-//		System.out.println(str);
-//		
-//		SimpleDateFormat sdf = 
-//				new SimpleDateFormat("");
-//		
-//		String str2 = sdf.format(now);
-//		System.out.println(str2);
-//	
 
-		// Å°º¸µå ÀÔ·Â¹Þ±â
+		Date now = new Date();
+		String str = now.toString();
+		System.out.println(str);
+
+		SimpleDateFormat sdf = new SimpleDateFormat("yyyy/MM/dd hh:mm:ss");
+		String str2 = sdf.format(now);
+		System.out.println(str2);
+
+		// í‚¤ë³´ë“œ -> ë‚ ì§œ ìž…ë ¥ 2024/06/04
 		DateFormat df = new SimpleDateFormat("yyyy/MM/dd");
-	
 		Date date = null;
-		
 		try {
-			 date = df.parse("2024/06/04");
+			date = df.parse("2024/06/04");
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		System.out.println(date);
 	}
 

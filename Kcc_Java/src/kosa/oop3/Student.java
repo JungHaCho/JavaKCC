@@ -1,10 +1,10 @@
 package kosa.oop3;
 
-public class Student extends Role{
+public class Student implements Role {
 
 	@Override
 	public void doing() {
-		// TODO Auto-generated method stub
-		System.out.println("�� Student doing ");
+		System.out.println("학생역할 출력");
 	}
+
 }

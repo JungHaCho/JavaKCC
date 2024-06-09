@@ -2,10 +2,9 @@ package kosa.oop2;
 
 public class MyService {
 
-	private Dao dao;
+	private Dao dao; // 연관관계
 
 	public MyService() {
-
 	}
 
 	public MyService(Dao dao) {

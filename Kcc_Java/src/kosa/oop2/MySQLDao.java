@@ -2,7 +2,12 @@ package kosa.oop2;
 
 public class MySQLDao extends Dao {
 
-	public void insert() {
-		System.out.println("MysqlDao insert»£√‚");
+	public MySQLDao() {
 	}
+
+	@Override
+	public void insert() {
+		System.out.println("MySQLDao insert Ìò∏Ï∂ú");
+	}
+
 }

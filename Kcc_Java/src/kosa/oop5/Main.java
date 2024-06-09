@@ -4,57 +4,43 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		MyType myType = new MyType() {
+		MyType my1 = new MyType() {
 
 			@Override
 			public void hello() {
-				System.out.println("hi");
+				System.out.println("ìµëª…í´ëž˜ìŠ¤ ë°©ì‹");
 			}
-
 		};
+		my1.hello();
 
-		myType.hello();
-
-		MyType my2 = () -> {
-			System.out.println("¶÷´Ù½Ä Çü½ÄÀÔ´Ï´Ù.");
-		};
+		MyType my2 = () -> System.out.println("ëžŒë‹¤ì‹ ë°©ì‹");
 		my2.hello();
 
-		MyType my3 = () -> System.out.println("¶÷´Ù½ÄÇü½Ä 2ÀÔ´Ï´Ù.");
-		my3.hello();
-
 		YourType you = (String message) -> {
-			System.out.println("¸Þ¼¼Áö " + message);
+			System.out.println("ë©”ì‹œì§€: " + message);
 		};
-		you.talk("hello1");
+		you.talk("hi");
 
-		YourType you2 = (String message) -> System.out.println("¸Þ¼¼Áö " + message);
-		you2.talk("hello2");
+		YourType you2 = message -> System.out.println("ë©”ì‹œì§€: " + message);
+		you2.talk("hihi");
 
-//		
-//		MyNumber myNum = (num1, num2) -> {
-//			if (num1 > num2) {
-//				return num1;
-//			}
-//			return num2;
-//		};
-//
-//		System.out.println(myNum.getMax(2, 1));
-		
-		MyNumber myNum = (num1, num2) -> (num1 > num2) ? num1:num2;
-		
-		
-		Runnable r = () -> {
-			for(int i =1;i<=10;i++) {
+		// MyNumber ì¶”ìƒ ë©”ì„œë“œ êµ¬í˜„(ëžŒë‹¤ì‹)
+		MyNumber myNum = (a, b) -> (a > b) ? a : b;
+		System.out.println(myNum.getMax(3, 2));
+
+		Runnable r1 = () -> {
+			for (int i = 1; i <= 10; i++) {
 				try {
 					Thread.sleep(1000);
-				}catch(Exception e){}
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
 				System.out.println(i);
 			}
 		};
-		
-		Thread t = new Thread(r);
+		Thread t = new Thread(r1);
 		t.start();
+		
 	}
 
 }

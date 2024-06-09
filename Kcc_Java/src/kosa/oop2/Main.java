@@ -3,12 +3,12 @@ package kosa.oop2;
 public class Main {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
-		OracleDao dao = new OracleDao();
-		MySQLDao mysql = new MySQLDao();
+		Dao oracleDao = new OracleDao();
+		Dao mySQLDao = new MySQLDao();
 
-		MyService service = new MyService(mysql);
+		MyService service = new MyService(mySQLDao);
+
 		service.insertService();
 
 	}
