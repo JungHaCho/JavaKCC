@@ -4,6 +4,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Arrays;
 
 public class CopyExam {
 
@@ -12,7 +13,8 @@ public class CopyExam {
 
 		FileWriter writer = null;
 		FileReader reader = null;
-		String s = "";
+		char arr[] = new char[10];
+//		String s = "";
 
 		try {
 			reader = new FileReader("poem2.txt");
@@ -20,20 +22,21 @@ public class CopyExam {
 
 			while (true) {
 
-				int data = 0;
-				data = reader.read();
-
-				if (data == -1) {
-					break;
-				}
-
-				s += (char) data;
+				Arrays.fill(arr,' ');
+				int data = reader.read(arr);
+				if(data == -1) break;
+				writer.write(arr);
+//				int data = 0;
+//				data = reader.read();
+//
+//				if (data == -1) {
+//					break;
+//				}
+//
+//				s += (char) data;
 			}
 
-		
-			System.out.println(s);
-			writer.write(s);
-			System.out.println(">>>> ¼º°ø");
+			System.out.println("ë³µì‚¬ì™„ë£Œ");
 		} catch (Exception e) {
 			e.printStackTrace();
 		} finally {
