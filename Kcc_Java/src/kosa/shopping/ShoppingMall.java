@@ -148,6 +148,8 @@ public class ShoppingMall {
 		Scanner sc = new Scanner(System.in);
 		System.out.print("개별 장바구니 목록을 볼 고객 이름을 입력하시오 >>> ");
 		String orderCartCustomerName = sc.nextLine();
+		int totalPrice = 0;
+
 
 		for (User usercheck : userList) {
 			// user 체크
@@ -155,8 +157,9 @@ public class ShoppingMall {
 				// user의 저장된 상품객체들 전체 출력
 				for (Product userCart : usercheck.getCart()) {
 					System.out.println(userCart.infoProduct());
-
+					totalPrice += userCart.getPrice();
 				}
+				System.out.println(totalPrice);
 				break;
 			} else {
 				System.out.println("없는 사용자입니다.");
@@ -177,21 +180,20 @@ public class ShoppingMall {
 		for (User usercheck : userList) {
 			if (usercheck.getName().equals(CustomerName)) {
 				// 주문 목록
-				for (Product userCart : usercheck.getCart()) {
-					System.out.println("주문하실 목록은 >>" + userCart.infoProduct() + "입니다.");
-					totalPrice += userCart.getPrice();
+				for (Product userCartProductList : usercheck.getCart()) {
+					System.out.println("주문하실 목록은 >>" + userCartProductList.infoProduct() + "입니다.");
+					totalPrice += userCartProductList.getPrice();
+					
 				}
-
-				// 주문 결제 내역 추가
-//				orderList.add(new Order(usercheck.getCart(), usercheck));
-
-				// Order클래스의 totalPrice 값을 어떻게 set하나????????????????????
-				for (Order userOrder : orderList) {
-					userOrder.setTotalPrice(totalPrice);
-				}
-
-				System.out.println("결제 됐습니다.");
 				usercheck.setCart(null);
+				System.out.println(usercheck.getCart());
+				// 주문 결제 내역 추가
+				orderList.add(new Order(usercheck));
+
+				
+				
+				System.out.println(totalPrice+"원 결제 됐습니다.");
+//				
 			}
 		}
 
@@ -207,11 +209,10 @@ public class ShoppingMall {
 		for (User usercheck : userList) {
 			if (usercheck.getName().equals(CustomerName)) {
 				
-				// 입력한 user이름이랑 
-				// Order클래스의 fromUser 같을때 
-				// orderList안에서의 order의 (인덱스??) 객체주소값을 어떻게 알 수 있나
 				for (Order order : orderList) {
-					order.getFromUser();
+					for (Product userCart :order.getFromUser().getCart()) {
+						System.out.println(userCart.infoProduct());
+					}
 				}
 			}
 		}

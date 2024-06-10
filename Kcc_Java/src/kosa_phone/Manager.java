@@ -6,6 +6,8 @@ import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class Manager {
 
@@ -90,17 +92,25 @@ public class Manager {
 //			for (PhoneInfo el : list) {
 //				el.show();
 //			}
-			it = list.iterator();
-			while (it.hasNext()) {
-				it.next().show();
-			}
+//			it = list.iterator();
+//			while (it.hasNext()) {
+//				it.next().show();
+//			}
+			Stream<PhoneInfo> phoneInfoStream = list.stream();
+			phoneInfoStream.forEach(phs -> phs.show());
 
 		} else if (menu2 == 2) {
-			for (PhoneInfo p : list) {
-				if (p instanceof Company) {
-					((Company) p).Companyshow();
+			list.stream().forEach(phs -> {
+				if (phs instanceof Company) {
+					((Company) phs).Companyshow();
 				}
-			}
+			});
+
+//			for (PhoneInfo p : list) {
+//				if (p instanceof Company) {
+//					((Company) p).Companyshow();
+//				}
+//			}
 
 //			it = list.iterator();
 //			while (it.hasNext()) {
@@ -133,15 +143,19 @@ public class Manager {
 
 		String name = sc.nextLine();
 
-		for (int i = 0; i < list.size(); i++) {
-			if (name.equals(list.get(i).getName())) {
-				System.out.print(name + "찾았습니다 ");
-
-			} else {
-				System.out.println("못찾았습니다");
-			}
+//		for (int i = 0; i < list.size(); i++) {
+//			if (name.equals(list.get(i).getName())) {
+//				System.out.print(name + "찾았습니다 ");
+//
+//			} else {
+//				System.out.println("못찾았습니다");
+//			}
+//		}
+		boolean found = list.stream().filter(phoneInfo -> name.equals(phoneInfo.getName()))
+				.peek(phoneInfo -> System.out.print(name + "찾았습니다 ")).findFirst().isPresent();
+		if (!found) {
+			System.out.println("못찾았습니다");
 		}
-
 	}
 
 	public void updatePhoneInfo() {
@@ -152,17 +166,27 @@ public class Manager {
 
 		String name = sc.nextLine();
 
-		int idx = -1;
+//		int idx = -1;
+//
+//		for (int i = 0; i < list.size(); i++) {
+//			if (name.equals(list.get(i).getName())) {
+//				System.out.print("수정 전화번호 >> ");
+//				String phoneNo = sc.nextLine();
+//				list.get(i).setPhoneNo(phoneNo);
+//				idx = i;
+//			}
+//		}
+//		if (idx == -1) {
+//			System.out.println("존재하지 않습니다.");
+//		}
 
-		for (int i = 0; i < list.size(); i++) {
-			if (name.equals(list.get(i).getName())) {
-				System.out.print("수정 전화번호 >> ");
-				String phoneNo = sc.nextLine();
-				list.get(i).setPhoneNo(phoneNo);
-				idx = i;
-			}
-		}
-		if (idx == -1) {
+		boolean listBool = list.stream().filter(phoneInfo -> name.equals(phoneInfo.getName())).peek(phoneInfo -> {
+			System.out.print("수정 전화번호 >> ");
+			String phoneNo = sc.nextLine();
+			phoneInfo.setPhoneNo(phoneNo);
+
+		}).findFirst().isPresent();
+		if (!listBool) {
 			System.out.println("존재하지 않습니다.");
 		}
 	}
@@ -173,12 +197,24 @@ public class Manager {
 		System.out.print("이름:");
 		String name = sc.nextLine();
 
-		int idx = -1;
-		for (int i = 0; i < list.size(); i++) {
-			if (name.equals(list.get(i).getName())) {
-				list.remove(list.get(i));
-			}
-		}
+//		IntStream.range(0,list.size()).filter(i -> name.equals(list.get(i).getName())).forEach(i -> {
+//			System.out.print("지웠습니다>> ");
+//			String phoneNo = sc.nextLine();
+//			list.remove(list.get(i));
+//
+//		});
+
+		IntStream.range(0, list.size()).filter(i -> name.equals(list.get(i).getName()))
+				.forEach(i -> list.remove(list.get(i)));
+
+//		
+//		int idx = -1;
+//		for (int i = 0; i < list.size(); i++) {
+//			if (name.equals(list.get(i).getName())) {
+//				list.remove(list.get(i));
+//			}
+//		}
+//		
 //		if (idx == -1) {
 //			System.out.println("존재하지 않습니다.");
 //		} else {
@@ -219,6 +255,7 @@ public class Manager {
 				}
 
 			});
+//			list.stream().sorted((o1,o2)->);
 			break;
 		case "2":
 			System.out.println("------이름 오름차순 --------");
@@ -235,8 +272,6 @@ public class Manager {
 			});
 			break;
 		}
-
-	
 
 	}
 
