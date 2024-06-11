@@ -1,6 +1,0 @@
-package kosa.speak;
-
-public interface Speakable {
-
-	String speak();
-}

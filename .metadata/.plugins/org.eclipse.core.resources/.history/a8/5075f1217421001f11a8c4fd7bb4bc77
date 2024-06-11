@@ -1,8 +1,0 @@
-package kosa.oop5;
-
-public class MyType {
-
-	public void hello() {
-		System.out.println("MyType");
-	}
-}

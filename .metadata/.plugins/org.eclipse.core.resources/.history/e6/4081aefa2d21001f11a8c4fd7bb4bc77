@@ -1,7 +1,0 @@
-package kosa.menu;
-
-public class Dessert {
-
-	public String drinks;
-	public String sort;
-}

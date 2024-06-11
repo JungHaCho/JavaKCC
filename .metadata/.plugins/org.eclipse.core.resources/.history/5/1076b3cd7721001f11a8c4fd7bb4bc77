@@ -1,7 +1,0 @@
-package kosa.oop5;
-
-public interface YourType {
-
-	public void hello(String s);
-	
-}

@@ -1,5 +1,13 @@
 package kosa_phone;
 
+import java.io.BufferedWriter;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.OutputStream;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.Iterator;
@@ -275,4 +283,50 @@ public class Manager {
 
 	}
 
+	public void customerDataWrite() {
+
+		ObjectOutputStream oos = null;
+
+		try {
+
+			oos = new ObjectOutputStream(new FileOutputStream("Data.txt"));
+			oos.writeObject(list);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				oos.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+
+		}
+	}
+	
+	public void customerDataRead() {
+
+		ObjectInputStream ois = null;
+		List<PhoneInfo> listresult = null;
+
+		try {
+
+			ois = new ObjectInputStream(new FileInputStream("Data.txt"));
+			listresult = (List<PhoneInfo>) ois.readObject();
+
+			for (PhoneInfo phoneInfo : listresult) {
+				System.out.println(phoneInfo.toString());
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				ois.close();
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+			
+		}
+		
+	}
 }

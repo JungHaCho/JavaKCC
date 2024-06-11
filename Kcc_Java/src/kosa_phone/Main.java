@@ -47,7 +47,17 @@ public class Main {
 				break;
 				
 			case "7":
-				System.out.println("프로그램종료");
+				System.out.println("데이터 저장");
+				m.customerDataWrite();
+				break;
+				
+			case "8":
+				System.out.println("저장된 데이터 읽기");
+				m.customerDataRead();
+				break;
+			
+			case "9":
+				System.out.println("종료");
 				return;
 			
 

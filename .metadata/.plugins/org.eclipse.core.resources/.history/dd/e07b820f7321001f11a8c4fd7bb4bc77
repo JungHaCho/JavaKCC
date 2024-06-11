@@ -1,6 +1,0 @@
-package kosa.oop4;
-
-public class Dao {
-
-	public abstract db();
-}

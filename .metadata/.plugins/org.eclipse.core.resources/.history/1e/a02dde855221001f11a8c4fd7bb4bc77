@@ -1,5 +1,0 @@
-package kosa.implement;
-
-public class Student implements Role {
-
-}

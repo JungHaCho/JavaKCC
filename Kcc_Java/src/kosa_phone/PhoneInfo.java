@@ -48,17 +48,4 @@ public class PhoneInfo{
 	public void setBrith(String brith) {
 		this.brith = brith;
 	}
-// 1¾Èº¯ÇÔ
-	//
-//	@Override
-//	public int compareTo(PhoneInfo p) {
-//		// TODO Auto-generated method stub
-//		if(this.name.compareTo(p.getName())>0) {
-//			return 1;
-//		}else if(this.name.compareTo(p.getName())<0){
-//			return -1;
-//		}
-//		return 0;
-//	}
-
 }
