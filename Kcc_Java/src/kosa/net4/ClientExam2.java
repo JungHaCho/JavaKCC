@@ -56,7 +56,7 @@ public class ClientExam2 {
         try {
 //			socket = new Socket("192.168.0.26", 9000);
 //			socket = new Socket("192.168.0.16", 9000);
-            socket = new Socket("192.168.0.7", 9000);
+            socket = new Socket("127.0.0.1", 9000);
 
             clientReceiver = new ClientReceiver(socket, outTa, list);
             clientSend = new ClientSend(socket, inTx);

@@ -1,9 +1,0 @@
-package kosa.date;
-
-public class ListExam {
-
-	public static void main(String[] args) {
-		
-		int arr[] = Math.random(6);
-	}
-}
